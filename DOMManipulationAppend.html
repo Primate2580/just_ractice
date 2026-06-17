@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="actionBox"></div>
+    <div id="userCard"></div>
+    <script>
+      // 🎯 Task 1: The Alert Button
+      // Imagine you want to create a warning button dynamically.
+
+      // Create a <button> element.
+
+      // Change its text content to say "Delete Account".
+
+      // Give it a red background color using JavaScript (.style.backgroundColor = "red").
+
+      // Append it to an existing div that has the id "actionBox".
+      // Write the code to do this.
+
+      function createAlertButton() {
+        let container = document.querySelector(".actionBox");
+        let button = document.createElement("button");
+        button.textContent = "delete account";
+        button.style.backgroundColor = "red";
+        container.style.padding = "10px";
+        container.style.width = "fit-content";
+        container.style.outline = "none";
+        container.appendChild(button);
+      }
+
+      createAlertButton();
+
+      function profileBadge() {
+        let user_card = document.getElementById("userCard");
+        let name_and_paragraph_element = document.createElement("div");
+        let nameElement =document.createElement("h3");
+        let paragraphElement = document.createElement("p");
+
+        nameElement.textContent = "My Name";
+        paragraphElement.textContent = "software developer";
+        name_and_paragraph_element.appendChild(nameElement);
+        name_and_paragraph_element.appendChild(paragraphElement);
+
+        user_card.appendChild(name_and_paragraph_element);
+      }
+        profileBadge();
+
+      // 🎯 Task 2: Build a Profile Badge
+      // Let's nest three layers deep. Imagine you have a container on your page: <div id="userCard"></div>.
+      // Write the code to:
+
+      // Create an <h3> element, and set its text to your name.
+
+      // Create a <p> element, and set its text to "Software Developer".
+
+      // The Twist: Create a parent <div> called badgeContainer. Append the <h3> and the <p> inside the badgeContainer.
+
+      // Finally, append the badgeContainer inside the #userCard div on your webpage.
+
+      // Give these two factory assembly lines a shot! Which one do you want to start with?
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let totals = {
+        expense: 62000,
+        investment: 450000,
+        income: 230000,
+        tax: 15000,
+      };
+
+      // 2. Tasks to Make "Sort" Stick
+      // The absolute best way to learn sorting is to break it, reverse it, and apply it to different data.
+      //  Try writing the code for these 3 challenges:
+
+      // 🎯 Task 1: Reverse the Leaderboard (Ascending Order)
+      // Right now, your app shows the biggest financial category first.
+      // Change the sorting code so that it sorts from lowest amount to highest amount.
+      // (Hint: Look at the "Easy Shortcut" from our previous chat!)
+
+      let types = Object.keys(totals);
+      types.sort(function (a, b) {
+        return totals[a] - totals[b];
+      });
+      console.log(types);
+
+      console.log(types.sort());
+      
+
+      // Expected output array: ["tax", "expense", "income", "investment"]
+
+      // 🎯 Task 2: Sort the Gamers
+      // Imagine you are building a video game dashboard.
+      // You have an object tracking player high scores:
+
+      // JavaScript
+      let highScores = {
+        PixelKnight: 1250,
+        ShadowNinja: 4200,
+        CosmicCat: 850,
+        DrDoom: 3100,
+      };
+
+playerScores=Object.keys(highScores).sort(function(a,b){
+    return highScores [b] - highScores [a]
+})
+console.log(playerScores);
+
+
+      // Write a piece of code that gets the player names (Object.keys) and sorts them from highest score
+      //  to lowest score so you can display a podium leaderboard.
+
+      // 🎯 Task 3: Alphabetical Sort (The Curveball)
+      // What if you don't want to sort by money at all? What if you just want your categories
+      //  listed alphabetically ("expense", "income", "investment", "tax")?
+
+    
+
+      // The Twist: You cannot use subtraction (-) on strings. In JavaScript, standard arrays of
+      // text can be sorted alphabetically by just calling .sort() with nothing inside the parentheses.
+
+      // Your Task: Take your totals object keys and sort them purely alphabetically.
+
+      // Give these a shot in your editor or just mental-code them here. Which one do you want to tackle first?
+    </script>
+  </body>
+</html>
