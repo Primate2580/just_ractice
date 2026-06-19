@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function showPage() {
+  // Get the hash, strip "#", default to dashboard
+  let hash = window.location.hash.replace("#", "") || "dashboard";
+
+  // Hide all pages
+  let allPages = document.querySelectorAll(".page");
+
+  allPages.forEach(function (page) {
+    page.style.display = "none";
+  });
+
+  // Show the matching page
+  let activePage = document.getElementById("page-" + hash);
+
+  if (activePage) {
+    activePage.style.display = "block";
+  }
+
+  // Update active nav link styling
+  updateActiveNavLink(hash);
+}
+
+
+
+// Modern version (using arrow functions)
+ function showPage() {
+  const hash = window.location.hash.replace("#", "") || "dashboard";
+
+   document.querySelectorAll(".page").forEach((page) => {
+     page.style.display = "none";
+   });
+
+   const activePage = document.getElementById(`page-${hash}`);
+
+   if (activePage) {
+     activePage.style.display = "block";
+   }
+
+  updateActiveNavLink(hash);
+}
+// Don't forget
+
+// For this to work, each page section needs the page class:
+
+// <section id="page-dashboard" class="page">
+// <section id="page-transactions" class="page">
+// <section id="page-reports" class="page">
+
+    </script>
+</body>
+</html>

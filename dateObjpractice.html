@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+         // Create a new Date object
+      const now = new Date();
+      console.log(now);
+
+      // Get the current year
+      const year = now.getFullYear();
+      console.log(year);
+      const components = new Date("2026-06-15");
+      console.log(components.getFullYear()); // 2026 (Always use this over getYear())
+      console.log(components.getMonth()); // 5 (Remember: June is index 5!)
+      console.log(components.getDate()); // 15 (Returns the day of the month)
+      console.log(components.getDay()); // 1 (Returns day of the week! 0 = Sunday, 1 = Monday...)
+      console.log(components.getTime()); // 1781568000000 (The giant raw millisecond number)
+
+
+
+// Task 1: The Birthday Checker
+// Write a function called getAge(birthYear) that takes a birth year number as an input and calculates how old someone is.
+
+// Rule: You are not allowed to hardcode the current year (2026). You must generate a new Date() object inside the function 
+// and dynamically extract the current year using a getter method.
+
+function getAge(birthYear) {
+  const currentYear = new Date().getFullYear();
+  return currentYear - birthYear;
+}
+getAge(1990);
+
+// Task 2: Streak Protection (Date Comparisons)
+// In your FitTrack Pro app, you might want to see if someone worked out two days in a row. Since dates are objects, 
+// you can't compare them directly like this: 
+// dateA === dateB (this always returns false because they are different locations in computer memory!).
+
+// Hint: To compare timestamps accurately, you must compare their raw millisecond integers.
+
+// Your Task: Create two different date objects representing today. Use a getter method that extracts 
+//  raw millisecond numerical value to prove they are identical in time.
+ function compareDates() {
+  const dateA = new Date();
+  const dateB = new Date();
+  return dateA.getTime() === dateB.getTime();
+ }
+
+
+
+// Task 3: The Day-of-the-Week Logger
+// When logging a workout, it's nice to show the user what day of the week it was (e.g., "You crushed this workout on a Monday!").
+
+// Your Task: Write a function called getWeekdayName(dateString) that accepts a date string like "2026-06-17",
+//  processes it with a Date object, and uses an array to return the text string matching the correct day of the
+//   week ("Sunday", "Monday", "Tuesday", etc.).
+
+function getWeekdayName(dateString) {
+  const date = new Date(dateString);
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    return daysOfWeek[date.getDay()];
+  }
+        </Script>
+</body>
+</html>

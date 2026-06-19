@@ -13,28 +13,10 @@ isDescendingOrder = true
 
 function formatDate(rawDateString) {
   if (!rawDateString) return "—";
-
-  // 1. Split "2026-06-15" by the hyphens into an array: ["2026", "06", "15"]
-  const dateParts = rawDateString.split("-"); 
-  const year = dateParts[0];
-  const monthNumber = dateParts[1];
-  const day = dateParts[2];
-
-  // 2. Create an array of month names (Index 0 is January, Index 1 is February, etc.)
-  const months = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-  ];
-
-  // 3. Convert the string month (e.g., "06") into an actual array index (5)
-  // We subtract 1 because arrays start at 0, and ParseInt turns "06" into the number 6.
-  const monthText = months[parseInt(monthNumber) - 1];
-
-  // 4. Combine them into your final string using template literals
-  return `${monthText} ${parseInt(day)}, ${year}`;
+  const dateObj = new Date(rawDateString);
+  const options = { month: 'short', day: 'numeric', year: 'numeric' };
+  return dateObj.toLocaleDateString('en-US', options);
 }
-
-// Example usage:
 console.log(formatDate("2026-06-15")); // Output: "Jun 15, 2026"
 
 // // --- Analytics Calculations ---
